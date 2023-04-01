@@ -1,3 +1,4 @@
+import random
 import threading
 import time
 import requests
@@ -15,7 +16,7 @@ def task(start, finish):
             #delay here and not in except ?
             response=requests.get("https://explorer.neoxa.net/api/getblock?hash="+str(response1))
         except:
-            time.sleep(1)
+            time.sleep(random.randint(1,6))
             print("explorer neoxa timeout")
             continue
         try:
@@ -27,7 +28,7 @@ def task(start, finish):
         try:
             response=requests.get("https://neoxa.cryptoscope.io/block/block.php?blockheight="+str(start)).text
         except:
-            time.sleep(1)
+            time.sleep(random.randint(0,2))
             print("cryptoscope .php timeout")
             continue
         soup = BeautifulSoup(response, 'html.parser')
@@ -52,7 +53,7 @@ def task(start, finish):
 
 
 
-nThread=24
+nThread=10
 last_blockchain_block=460000#int(requests.get("https://explorer.neoxa.net/api/getblockcount").text)
 block_interval=[]
 totalRecordWriten=0

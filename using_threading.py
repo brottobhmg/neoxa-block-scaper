@@ -56,9 +56,9 @@ nThread=24
 last_blockchain_block=460000#int(requests.get("https://explorer.neoxa.net/api/getblockcount").text)
 block_interval=[]
 totalRecordWriten=0
+blockFrom=0 #from first block
 
-
-for i in range(0,last_blockchain_block,int(last_blockchain_block/nThread)):
+for i in range(blockFrom,last_blockchain_block,int(last_blockchain_block/nThread)):
     block_interval.append([i,i+int(last_blockchain_block/nThread)])
 
 print(block_interval)

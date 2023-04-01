@@ -76,7 +76,7 @@ for i in range(nThread):
 print("Waiting ...")
 while not threading.active_count()==0:
     print(str(totalRecordWriten))
-    time.sleep(2)
+    time.sleep(5*60)
 print("All threads finish")
 
 #TODO joining file .csv

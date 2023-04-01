@@ -33,7 +33,7 @@ while i<last_blockchain_block:
         #delay here and not in except ?
         response=requests.get("https://explorer.neoxa.net/api/getblock?hash="+str(response1))
     except:
-        time.sleep(1)
+        time.sleep(4)
         print("explorer neoxa timeout")
         continue
 

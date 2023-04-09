@@ -1,6 +1,7 @@
 # neoxa-block-scaper
 
 Useful script to log all block on Neoxa blockchain.
+
 Download the repository, install the requirements, rename the .csv to "neoxa_block_log.csv" and run "scraper.py".
 
 # The idea 
